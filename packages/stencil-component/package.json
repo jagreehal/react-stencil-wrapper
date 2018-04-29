@@ -1,12 +1,14 @@
 {
   "name": "@jagreehal/stencil-component",
   "private": true,
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Stencil component",
   "main": "dist/stencil-app.js",
   "types": "dist/types/components.d.ts",
   "collection": "dist/collection/collection-manifest.json",
-  "files": ["dist/"],
+  "files": [
+    "dist/"
+  ],
   "scripts": {
     "build": "stencil build --stats --prerender",
     "dev": "sd concurrent \"stencil build --dev --watch\"",
@@ -41,10 +43,15 @@
   },
   "jest": {
     "transform": {
-      "^.+\\.(ts|tsx)$":
-        "<rootDir>/node_modules/@stencil/core/testing/jest.preprocessor.js"
+      "^.+\\.(ts|tsx)$": "<rootDir>/node_modules/@stencil/core/testing/jest.preprocessor.js"
     },
     "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(tsx?|jsx?)$",
-    "moduleFileExtensions": ["ts", "tsx", "js", "json", "jsx"]
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json",
+      "jsx"
+    ]
   }
 }
