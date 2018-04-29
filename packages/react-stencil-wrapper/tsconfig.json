@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "target": "es6",
+    "module": "esNext",
+    "lib": ["es2016", "es2017", "dom"],
+    "strict": true,
+    "sourceMap": true,
+    "strictPropertyInitialization": false,
+    "declaration": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "declarationDir": "dist/types",
+    "outDir": "dist/lib",
+    "typeRoots": ["node_modules/@types"]
+  },
+  "include": ["src"]
+}

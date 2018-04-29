@@ -1,0 +1,16 @@
+{
+  "lerna": "2.9.1",
+  "version": "independent",
+  "packages": [
+    "packages/*"
+  ],
+  "ignoreChanges": [
+    "**/*.spec.*",
+    "**/*.md"
+  ],
+  "commands": {
+    "run": {
+      "ignore": "\\@jagreehal/*"
+    }
+  }
+}

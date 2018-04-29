@@ -1,0 +1,83 @@
+{
+  "compiler": {
+    "name": "@stencil/core",
+    "version": "0.7.26"
+  },
+  "app": {
+    "namespace": "StencilApp",
+    "fsNamespace": "stencil-app",
+    "components": 1,
+    "entries": 1,
+    "bundles": 4
+  },
+  "options": {
+    "minifyJs": true,
+    "minifyCss": true,
+    "hashFileNames": true,
+    "hashedFileNameLength": 8,
+    "buildEs5": true
+  },
+  "components": [
+    {
+      "tag": "st-button",
+      "dependencies": [],
+      "dependencyOf": []
+    }
+  ],
+  "entries": [
+    {
+      "entryId": "entry:st-button",
+      "components": [
+        {
+          "tag": "st-button",
+          "dependencies": [],
+          "dependencyOf": []
+        }
+      ],
+      "bundles": [
+        {
+          "fileName": "stae9xcz.js",
+          "size": 1164,
+          "outputs": [
+            "dist/stencil-app/stae9xcz.js"
+          ]
+        },
+        {
+          "fileName": "stae9xcz.sc.js",
+          "size": 1164,
+          "outputs": [
+            "dist/stencil-app/stae9xcz.sc.js"
+          ],
+          "scopedStyles": true
+        },
+        {
+          "fileName": "stae9xcz.es5.js",
+          "size": 1655,
+          "outputs": [
+            "dist/stencil-app/stae9xcz.es5.js"
+          ],
+          "target": "es5"
+        },
+        {
+          "fileName": "stae9xcz.sc.es5.js",
+          "size": 1655,
+          "outputs": [
+            "dist/stencil-app/stae9xcz.sc.es5.js"
+          ],
+          "target": "es5",
+          "scopedStyles": true
+        }
+      ],
+      "inputs": [
+        "dist/collection/components/st-button/st-button.js"
+      ],
+      "encapsulations": [
+        "shadow"
+      ]
+    }
+  ],
+  "sourceGraph": {
+    "src/components/st-button/st-button.tsx": []
+  },
+  "collections": []
+}

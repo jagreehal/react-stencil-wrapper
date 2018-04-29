@@ -1,0 +1,17 @@
+{
+  "private": true,
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "build": "lerna run build",
+    "bump":
+      "lerna publish --exact --skip-npm --since \"v$(npm info react-stencil-wrapper version)\"",
+    "clean": "lerna clean",
+    "start": "lerna exec --parallel -- npm start",
+    "publish": "lerna publish --dry-run",
+    "test": "lerna run test",
+    "test:watch": "lerna exec -- npm test -- --watch"
+  },
+  "devDependencies": {
+    "lerna": "^2.11.0"
+  }
+}
