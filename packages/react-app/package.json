@@ -1,11 +1,12 @@
 {
-  "name": "react-app",
+  "name": "@jagreehal/react-app",
   "private": true,
   "version": "0.0.3",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --config ./webpack.config.js --mode development",
+    "start":
+      "webpack-dev-server --config ./webpack.config.js --mode development",
     "test": "echo \"No test specified\" && exit 0"
   },
   "keywords": [],
