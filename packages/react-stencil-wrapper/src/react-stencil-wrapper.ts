@@ -13,6 +13,12 @@ export class StencilComponentWrapper extends React.Component<Props> {
   wcReady: boolean = false
   wcReadyInterval: NodeJS.Timer
 
+  constructor(props: Props) {
+    super(props)
+
+    this.wc = React.createRef()
+  }
+
   waitForWebComponent = () => {
     return new Promise(resolve => {
       if (this.wc && this.wcReady) {
@@ -55,17 +61,17 @@ export class StencilComponentWrapper extends React.Component<Props> {
     }
   }
 
-  componentWillMount() {
-    if (this.props.src) {
+  async componentDidMount() {
+    const { src, children, eventListeners, componentDidMountCallback, ...props } = this.props
+
+    if (src) {
       const script = document.createElement('script')
-      script.src = this.props.src
+      script.src = src
       document.head.appendChild(script)
     }
-  }
 
-  async componentDidMount() {
     await this.waitForWebComponent()
-    const { src, children, eventListeners, componentDidMountCallback, ...props } = this.props
+
     this.addEventListeners(eventListeners)
     Object.entries(props).forEach(([name, value]) => {
       if (typeof value === 'function') {
@@ -94,9 +100,7 @@ export class StencilComponentWrapper extends React.Component<Props> {
 
   render() {
     return React.cloneElement(this.props.children, {
-      ref: (node: React.ReactNode) => {
-        this.wc = node
-      }
+      ref: this.wc
     })
   }
 }

@@ -12,9 +12,10 @@ class App extends React.Component {
     };
   }
 
-  handleToggle = () => {
+  handleToggle = e => {
+    const name = e.target.name;
     this.setState({
-      showStencilElement: !this.state.showStencilElement
+      name: !this.state[name]
     });
   };
 
@@ -45,12 +46,15 @@ class App extends React.Component {
             value={this.state.name}
           />
         </p>
-        <input
-          type="checkbox"
-          onChange={this.handleToggle}
-          checked={this.state.showStencilElement}
-        />
-        <label>Show/Hide</label>
+        <div>
+          <input
+            type="checkbox"
+            name="showStencilElement"
+            onChange={this.handleToggle}
+            checked={this.state.showStencilElement}
+          />
+          <label>Show/Hide</label>
+        </div>
 
         <hr />
         {this.state.showStencilElement ? (
