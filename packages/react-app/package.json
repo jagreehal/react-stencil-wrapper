@@ -1,12 +1,11 @@
 {
   "name": "@jagreehal/react-app",
   "private": true,
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start":
-      "webpack-dev-server --config ./webpack.config.js --mode development",
+    "start": "webpack-dev-server --config ./webpack.config.js --mode development",
     "test": "echo \"No test specified\" && exit 0"
   },
   "keywords": [],
@@ -28,6 +27,6 @@
     "babel-preset-env": "^1.6.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
-    "react-stencil-wrapper": "^0.0.3"
+    "react-stencil-wrapper": "^0.0.4"
   }
 }
