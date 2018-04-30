@@ -2,21 +2,20 @@
   "name": "react-stencil-wrapper",
   "version": "0.0.2",
   "bugs": {
-    "url": "https://github.com/jagreehal/react-stecil-wrapper/issues"
+    "url": "https://github.com/jagreehal/react-stencil-wrapper/issues"
   },
   "main": "dist/react-stencil-wrapper.umd.js",
   "module": "dist/react-stencil-wrapper.es5.js",
   "typings": "dist/types/react-stencil-wrapper.d.ts",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "author": "jagreehal <jag.reehal@gmail.com>",
-  "homepage": "https://github.com/jagreehal/react-stecil-wrapper#readme",
+  "homepage": "https://github.com/jagreehal/react-stencil-wrapper#readme",
   "description": "React Stencil Wrapper",
   "scripts": {
     "lint": "tslint -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
     "prebuild": "rimraf dist",
-    "build": "tsc --module commonjs && rollup -c rollup.config.ts && typedoc --out docs --target es6 --theme minimal --mode file src",
+    "build":
+      "tsc --module commonjs && rollup -c rollup.config.ts && typedoc --out docs --target es6 --theme minimal --mode file src",
     "start": "rollup -c rollup.config.ts -w",
     "test": "jest",
     "test:watch": "jest --watch",
@@ -63,37 +62,18 @@
     "validate-commit-msg": "^2.14.0"
   },
   "jest": {
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js"
-    ],
+    "moduleFileExtensions": ["ts", "tsx", "js"],
     "transform": {
       ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
-    "testMatch": [
-      "**/*.spec.(ts|tsx)"
-    ],
+    "testMatch": ["**/*.spec.(ts|tsx)"],
     "testEnvironment": "node",
-    "testPathIgnorePatterns": [
-      "node_modules/",
-      "dist"
-    ],
-    "coveragePathIgnorePatterns": [
-      "node_modules/",
-      "dist",
-      "**/*.spec.(ts|tsx)"
-    ],
-    "coverageReporters": [
-      "lcov",
-      "html"
-    ]
+    "testPathIgnorePatterns": ["node_modules/", "dist"],
+    "coveragePathIgnorePatterns": ["node_modules/", "dist", "**/*.spec.(ts|tsx)"],
+    "coverageReporters": ["lcov", "html"]
   },
   "lint-staged": {
-    "{src,test}/**/*.ts": [
-      "prettier --write --no-semi --single-quote",
-      "git add"
-    ]
+    "{src,test}/**/*.ts": ["prettier --write --no-semi --single-quote", "git add"]
   },
   "config": {
     "commitizen": {
@@ -101,7 +81,8 @@
     },
     "validate-commit-msg": {
       "types": "conventional-commit-types",
-      "helpMessage": "Use \"npm run commit\" instead, we use conventional-changelog format :) (https://github.com/commitizen/cz-cli)"
+      "helpMessage":
+        "Use \"npm run commit\" instead, we use conventional-changelog format :) (https://github.com/commitizen/cz-cli)"
     }
   },
   "repository": {
