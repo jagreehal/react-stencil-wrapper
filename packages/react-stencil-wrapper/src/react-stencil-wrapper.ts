@@ -13,12 +13,6 @@ export class StencilComponentWrapper extends React.Component<Props> {
   wcReady: boolean = false
   wcReadyInterval: NodeJS.Timer
 
-  constructor(props: Props) {
-    super(props)
-
-    this.wc = React.createRef()
-  }
-
   waitForWebComponent = () => {
     return new Promise(resolve => {
       if (this.wc && this.wcReady) {
@@ -27,8 +21,8 @@ export class StencilComponentWrapper extends React.Component<Props> {
       this.wcReadyInterval = setInterval(async () => {
         if (this.wc) {
           clearInterval(this.wcReadyInterval)
-          if (typeof (<any>this.wc).componentOnReady === 'function') {
-            await (<any>this.wc).componentOnReady()
+          if (typeof this.wc.componentOnReady === 'function') {
+            await this.wc.componentOnReady()
           }
           this.wcReady = true
           return resolve()
@@ -45,16 +39,18 @@ export class StencilComponentWrapper extends React.Component<Props> {
     }
   }
 
-  addEventListeners = (eventListeners: Object) => {
-    if (this.wc !== undefined && eventListeners !== undefined) {
+  addEventListeners = (eventListeners: Object = {}) => {
+    console.log('wc', this.wc)
+    if (this.wc !== undefined) {
       Object.entries(eventListeners).forEach(([name, value]) => {
+        console.log('wc', this.wc, this.wc.addEventListener)
         this.wc.addEventListener(name, value)
       })
     }
   }
 
-  removeEventListeners = (eventListeners: Object) => {
-    if (this.wc !== undefined && eventListeners !== undefined) {
+  removeEventListeners = (eventListeners: Object = {}) => {
+    if (this.wc !== undefined) {
       Object.entries(eventListeners).forEach(([name, value]) => {
         this.wc.removeEventListener(name, value)
       })
@@ -71,6 +67,8 @@ export class StencilComponentWrapper extends React.Component<Props> {
     }
 
     await this.waitForWebComponent()
+
+    console.log('xxxx')
 
     this.addEventListeners(eventListeners)
     Object.entries(props).forEach(([name, value]) => {
@@ -100,7 +98,9 @@ export class StencilComponentWrapper extends React.Component<Props> {
 
   render() {
     return React.cloneElement(this.props.children, {
-      ref: this.wc
+      ref: (node: React.ReactNode) => {
+        this.wc = node
+      }
     })
   }
 }
