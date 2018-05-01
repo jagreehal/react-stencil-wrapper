@@ -1,7 +1,7 @@
 {
   "name": "@jagreehal/react-app",
   "private": true,
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -38,7 +38,7 @@
     "babel-preset-env": "^1.6.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
-    "react-stencil-wrapper": "^0.0.5"
+    "react-stencil-wrapper": "^0.0.6"
   },
   "jest": {
     "globalSetup": "./setup.js",
