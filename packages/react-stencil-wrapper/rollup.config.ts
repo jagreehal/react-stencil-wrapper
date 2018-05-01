@@ -11,10 +11,7 @@ const libraryName = 'react-stencil-wrapper';
 
 export default {
   input: `src/${libraryName}.ts`,
-  output: [
-    { file: pkg.main, name: camelCase(libraryName), format: 'umd', sourcemap: true },
-    { file: pkg.module, format: 'es', sourcemap: true }
-  ],
+  output: [{ file: pkg.main, name: camelCase(libraryName), format: 'umd', sourcemap: true }],
 
   external: [],
   watch: {

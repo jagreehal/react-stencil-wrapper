@@ -40,10 +40,8 @@ export class StencilComponentWrapper extends React.Component<Props> {
   }
 
   addEventListeners = (eventListeners: Object = {}) => {
-    console.log('wc', this.wc)
     if (this.wc !== undefined) {
       Object.entries(eventListeners).forEach(([name, value]) => {
-        console.log('wc', this.wc, this.wc.addEventListener)
         this.wc.addEventListener(name, value)
       })
     }
@@ -67,8 +65,6 @@ export class StencilComponentWrapper extends React.Component<Props> {
     }
 
     await this.waitForWebComponent()
-
-    console.log('xxxx')
 
     this.addEventListeners(eventListeners)
     Object.entries(props).forEach(([name, value]) => {
