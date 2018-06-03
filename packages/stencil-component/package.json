@@ -1,7 +1,7 @@
 {
   "name": "@jagreehal/stencil-component",
   "private": true,
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Stencil component",
   "main": "dist/index.js",
   "module": "dist/esm/index.js",
