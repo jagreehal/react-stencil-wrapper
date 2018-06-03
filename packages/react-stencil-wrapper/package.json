@@ -4,9 +4,11 @@
   "bugs": {
     "url": "https://github.com/jagreehal/react-stencil-wrapper/issues"
   },
-  "main": "dist/react-stencil-wrapper.umd.js",
-  "module": "dist/react-stencil-wrapper.es5.js",
-  "typings": "dist/types/react-stencil-wrapper.d.ts",
+  "main": "dist/index.js",
+  "umd:main": "dist/index.umd.js",
+  "module": "dist/index.m.js",
+  "source": "src/index.ts",
+  "typings": "dist/index.d.ts",
   "files": [
     "dist"
   ],
@@ -14,53 +16,29 @@
   "homepage": "https://github.com/jagreehal/react-stencil-wrapper/tree/master/packages/react-stencil-wrapper#readme",
   "description": "React Stencil Wrapper",
   "scripts": {
-    "lint": "tslint -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
-    "prebuild": "rimraf dist",
-    "build": "tsc --module commonjs && rollup -c rollup.config.ts && typedoc --out docs --target es6 --theme minimal --mode file src",
-    "start": "rollup -c rollup.config.ts -w",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:prod": "npm run lint && npm run test -- --coverage --no-cache",
-    "deploy-docs": "ts-node tools/gh-pages-publish",
-    "report-coverage": "cat ./coverage/lcov.info | coveralls",
-    "commit": "git-cz",
-    "semantic-release": "semantic-release",
-    "semantic-release-prepare": "ts-node tools/semantic-release-prepare",
-    "precommit": "lint-staged"
+    "lint": "tslint -p tsconfig.json -c tslint.json",
+    "build": "microbundle",
+    "start": "microbundle watch",
+    "test": "jest --no-cache",
+    "test:watch": "jest --watch --no-cache"
   },
   "dependencies": {
-    "react": "^16.3.2"
+    "react": "^16.4.0"
   },
   "devDependencies": {
-    "@types/jest": "^22.2.3",
-    "@types/node": "^8.0.0",
-    "@types/prettier": "^1.12.0",
-    "@types/react": "^16.3.13",
-    "colors": "^1.2.1",
-    "commitizen": "^2.9.6",
-    "coveralls": "^3.0.0",
-    "cross-env": "^5.1.4",
-    "cz-conventional-changelog": "^2.1.0",
+    "@types/jest": "^23.0.0",
+    "@types/node": "^10.3.0",
+    "@types/prettier": "^1.12.4",
+    "@types/react": "^16.3.16",
     "husky": "^0.14.3",
-    "jest": "^22.4.3",
-    "lint-staged": "^7.0.5",
-    "lodash.camelcase": "4.3.0",
-    "prettier": "^1.12.1",
-    "rollup": "^0.58.2",
-    "rollup-plugin-commonjs": "^9.1.0",
-    "rollup-plugin-json": "^2.3.0",
-    "rollup-plugin-node-resolve": "^3.3.0",
-    "rollup-plugin-sourcemaps": "^0.4.2",
-    "rollup-plugin-typescript2": "^0.13.0",
-    "semantic-release": "^15.1.7",
-    "ts-jest": "^22.4.4",
-    "ts-node": "^6.0.2",
-    "tslint": "^5.9.1",
-    "tslint-config-airbnb": "5.8.0",
-    "tslint-config-prettier": "^1.12.0",
-    "typedoc": "^0.11.0",
-    "typescript": "^2.8.3",
-    "validate-commit-msg": "^2.14.0"
+    "jest": "^23.1.0",
+    "microbundle": "^0.4.4",
+    "prettier": "^1.13.4",
+    "ts-jest": "^22.4.6",
+    "tslint": "^5.10.0",
+    "tslint-config-airbnb": "5.9.2",
+    "tslint-config-prettier": "^1.13.0",
+    "typescript": "^2.9.1"
   },
   "jest": {
     "moduleFileExtensions": [
@@ -89,19 +67,9 @@
       "html"
     ]
   },
-  "lint-staged": {
-    "{src,test}/**/*.ts": [
-      "prettier --write --no-semi --single-quote",
-      "git add"
-    ]
-  },
-  "config": {
-    "commitizen": {
-      "path": "node_modules/cz-conventional-changelog"
-    },
-    "validate-commit-msg": {
-      "types": "conventional-commit-types",
-      "helpMessage": "Use \"npm run commit\" instead, we use conventional-changelog format :) (https://github.com/commitizen/cz-cli)"
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run lint && npm test"
     }
   },
   "repository": {

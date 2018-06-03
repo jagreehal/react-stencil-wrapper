@@ -3,8 +3,7 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "build": "lerna run build",
-    "bump":
-      "lerna publish --exact --skip-npm --since \"v$(npm info react-stencil-wrapper version)\"",
+    "bump": "lerna publish --exact --skip-npm --since \"v$(npm info react-stencil-wrapper version)\"",
     "clean": "lerna clean",
     "start": "lerna exec --parallel -- npm start",
     "prepublish": "npm run build",

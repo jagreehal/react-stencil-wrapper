@@ -1,14 +1,14 @@
 {
   "compiler": {
     "name": "@stencil/core",
-    "version": "0.7.26"
+    "version": "0.9.7"
   },
   "app": {
     "namespace": "StencilApp",
     "fsNamespace": "stencil-app",
     "components": 1,
     "entries": 1,
-    "bundles": 4
+    "bundles": 6
   },
   "options": {
     "minifyJs": true,
@@ -36,34 +36,57 @@
       ],
       "bundles": [
         {
-          "fileName": "stae9xcz.js",
-          "size": 1164,
+          "fileName": "smxnk5xe.js",
           "outputs": [
-            "dist/stencil-app/stae9xcz.js"
-          ]
+            "dist/stencil-app/smxnk5xe.js"
+          ],
+          "size": 1166,
+          "gzip": 551
         },
         {
-          "fileName": "stae9xcz.sc.js",
-          "size": 1164,
+          "fileName": "smxnk5xe.sc.js",
           "outputs": [
-            "dist/stencil-app/stae9xcz.sc.js"
+            "dist/stencil-app/smxnk5xe.sc.js"
           ],
+          "size": 1166,
+          "gzip": 551,
           "scopedStyles": true
         },
         {
-          "fileName": "stae9xcz.es5.js",
-          "size": 1655,
+          "fileName": "smxnk5xe.es5.js",
           "outputs": [
-            "dist/stencil-app/stae9xcz.es5.js"
+            "dist/stencil-app/smxnk5xe.es5.js"
           ],
+          "size": 1657,
+          "gzip": 646,
           "target": "es5"
         },
         {
-          "fileName": "stae9xcz.sc.es5.js",
-          "size": 1655,
+          "fileName": "smxnk5xe.sc.es5.js",
           "outputs": [
-            "dist/stencil-app/stae9xcz.sc.es5.js"
+            "dist/stencil-app/smxnk5xe.sc.es5.js"
           ],
+          "size": 1657,
+          "gzip": 646,
+          "target": "es5",
+          "scopedStyles": true
+        },
+        {
+          "fileName": "smxnk5xe.js",
+          "outputs": [
+            "dist/esm/es5/smxnk5xe.js"
+          ],
+          "size": 1575,
+          "gzip": 610,
+          "target": "es5"
+        },
+        {
+          "fileName": "smxnk5xe.sc.js",
+          "outputs": [
+            "dist/esm/es5/smxnk5xe.sc.js"
+          ],
+          "size": 1575,
+          "gzip": 610,
           "target": "es5",
           "scopedStyles": true
         }
