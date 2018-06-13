@@ -1,7 +1,7 @@
 {
   "name": "@jagreehal/react-app",
   "private": true,
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "React app for testing React Stencil Wrapper",
   "main": "index.js",
   "scripts": {
@@ -43,7 +43,7 @@
     "babel-preset-env": "^1.7.0",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
-    "react-stencil-wrapper": "^0.0.7"
+    "react-stencil-wrapper": "^0.0.8"
   },
   "jest": {
     "globalSetup": "./setup.js",
