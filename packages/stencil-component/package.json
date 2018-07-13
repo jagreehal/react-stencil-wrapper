@@ -23,7 +23,7 @@
   "author": "Jag Reehal",
   "license": "ISC",
   "dependencies": {
-    "@stencil/core": "0.9.7"
+    "@stencil/core": "0.10.4"
   },
   "devDependencies": {
     "@stencil/utils": "^0.0.4",
