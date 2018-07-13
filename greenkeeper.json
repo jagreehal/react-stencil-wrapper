@@ -1,0 +1,12 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "package.json",
+        "packages/react-app/package.json",
+        "packages/react-stencil-wrapper/package.json",
+        "packages/stencil-component/package.json"
+      ]
+    }
+  }
+}
