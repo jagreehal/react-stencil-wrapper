@@ -1,5 +1,7 @@
 ### React Stencil Wrapper
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/jagreehal/react-stencil-wrapper.svg)](https://greenkeeper.io/)
+
 This module enables you to easily wrap [Stencil](https://stenciljs.com/) components in React apps, taking full advantage of life cycle hooks so events are added and removed whenever a React component is mounted and unmounted.
 
 Example usage where 'st-button' is a Stencil component:
